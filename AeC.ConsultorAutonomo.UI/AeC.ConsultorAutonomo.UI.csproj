@@ -211,6 +211,10 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\brand-icons.svg" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\icons.svg" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\outline-icons.svg" />
+    <Content Include="Content\semanticui\themes\default\assets\images\flags.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -219,10 +223,24 @@
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\brand-icons.eot" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\brand-icons.ttf" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\brand-icons.woff" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\brand-icons.woff2" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\icons.eot" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\icons.otf" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\icons.ttf" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\icons.woff" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\icons.woff2" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\outline-icons.eot" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\outline-icons.ttf" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\outline-icons.woff" />
+    <Content Include="Content\semanticui\themes\default\assets\fonts\outline-icons.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -231,6 +249,8 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\riot\riotpluscompile.js" />
+    <Content Include="Content\semanticui\semantic.min.css" />
+    <Content Include="Scripts\semanticui\semantic.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -270,6 +290,7 @@
     <Content Include="Scripts\riot\Home\riot-navbar.tag" />
     <Content Include="Scripts\riot\Home\riot-sidebar.tag" />
     <Content Include="Scripts\riot\Home\riot-partiallogin.tag" />
+    <Content Include="Scripts\riot\Home\riot-aside.tag" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
