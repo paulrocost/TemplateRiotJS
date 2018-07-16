@@ -11,7 +11,7 @@
 <body>    
     <riot-navbar></riot-navbar>       
     <div class="ui bottom attached segment pushable">
-        <div class="ui visible inverted left vertical sidebar menu">
+        <div class="ui visible sidebar inverted vertical menu">
             <a class="item">
                 <i class="home icon"></i>
                 Home
@@ -28,41 +28,31 @@
                 <i class="calendar icon"></i>
                 History
             </a>
-        </div>
+        </div>         
         <div class="pusher">
-            <div class="ui basic segment">
+            <div class="ui basic segment">                
                 @RenderBody()
             </div>
-        </div>
-    </div>    
-    
-    
-        
-
+        </div>    
     </div>
-        @*<div class="ui vertical segment">
-
-
-                <hr />
-                <footer>
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-                </footer>
-            </div>*@
-
-        <script type="riot/tag" src="~/Scripts/riot/Home/riot-navbar.tag">
-        </script>
-        <script type="riot/tag" src="~/Scripts/riot/Home/riot-sidebar.tag">
-        </script>
-        <script type="riot/tag" src="~/Scripts/riot/Home/riot-aside.tag">
-        </script>
-        <script>riot.mount('*')</script>
-    <script>
-        // showing multiple
+    <div class="ui vertical segment">
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
         
+    <script type="riot/tag" src="~/Scripts/riot/Home/riot-navbar.tag">
     </script>
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/semantic")        
-        @RenderSection("scripts", required: false)
+    <script type="riot/tag" src="~/Scripts/riot/Home/riot-sidebar.tag">
+    </script>
+    <script type="riot/tag" src="~/Scripts/riot/Home/riot-aside.tag">
+    </script>
+    <script>riot.mount('*')</script>    
+        
+        
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/semantic")        
+    @RenderSection("scripts", required: false)
 </body>
 </html>

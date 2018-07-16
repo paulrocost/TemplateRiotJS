@@ -1,8 +1,8 @@
 ﻿<riot-navbar>
   <div class="ui attached stackable menu">
     <div class="ui container">
-      <a class="item">
-        <i class="align justify icon" onclick={opensidebar}></i> 
+      <a class="item" onclick={opensidebar}>
+        <i class="align justify icon" ></i> 
       </a>
       <a class="item">
         <i class="home icon"></i> Home
@@ -29,29 +29,33 @@
         </div>
       </div>
       <div class="right item">
-        <div class="ui input">
-          <input type="text" placeholder="Search...">
-        </div>
-        <div class="ui input">
-          <a class="item">
-            <i class="align justify icon" onclick={openasidebar}></i>
-          </a>  
+        <div class="ui icon input">
+          <input type="text" class="prompt" placeholder="Search..."/>
+          <i class="search icon"></i>
         </div>        
-      </div>
+      </div>      
     </div>
   </div>
-  <script>
-    this.openasidebar = function(){
-    $('.ui.sidebar .right')
-    .sidebar('hide');
-    };
-
+  <script>   
+     $('.ui.sidebar')
+    .sidebar(
+      {
+        context: '.bottom.segment',
+        dimPage: false,        
+        closable: false,
+        transition: 'push'
+      });
+    
     this.opensidebar = function(){
     $('.ui.sidebar')
-    .sidebar({
-    context: '.bottom.segment'
-    })
-    .sidebar('toggle');
+    .sidebar(
+      {
+        context: '.bottom.segment',
+        dimPage: false,        
+        closable: false,
+        transition: 'push'
+      })    
+      .sidebar('toggle');
     };
 
   </script>

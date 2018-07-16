@@ -1,5 +1,5 @@
 ﻿<riot-aside>
-  <div class="ui sidebar right visible vertical  menu">
+  <div class="ui wide visible right sidebar vertical menu">
     <a class="item">
       <i class="home icon"></i>
       Home
@@ -16,5 +16,5 @@
       <i class="calendar icon"></i>
       History
     </a>
-  </div> 
+  </div>  
 </riot-aside>
