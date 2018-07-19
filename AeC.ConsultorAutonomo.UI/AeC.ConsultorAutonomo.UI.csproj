@@ -303,6 +303,20 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AeC.ConsultorAutonomo.Business\AeC.ConsultorAutonomo.Business.csproj">
+      <Project>{577d94a2-c941-4bbf-ad68-cbb56768d40a}</Project>
+      <Name>AeC.ConsultorAutonomo.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AeC.ConsultorAutonomo.Data\AeC.ConsultorAutonomo.Data.csproj">
+      <Project>{6C7D7A4C-88A1-4EF3-930F-4B1CB9A74E20}</Project>
+      <Name>AeC.ConsultorAutonomo.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aec.ConsultorAutonomo.Domain\Aec.ConsultorAutonomo.Domain.csproj">
+      <Project>{374f6081-4f2d-492a-b742-4f0a49cf7f3c}</Project>
+      <Name>Aec.ConsultorAutonomo.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
