@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - AeC Sistemas</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/modernizr")        
     @Scripts.Render("~/bundles/riot")    
 </head>
 <body>    
     <riot-navbar></riot-navbar>       
     <div class="ui bottom attached segment pushable">
-        <div class="ui visible sidebar inverted vertical menu">
+        <div class="ui tiny sidebar inverted vertical menu">
             <a class="item">
                 <i class="home icon"></i>
                 Home
@@ -29,30 +29,23 @@
                 History
             </a>
         </div>         
-        <div class="pusher">
+        <div class="ui container">
             <div class="ui basic segment">                
                 @RenderBody()
             </div>
         </div>    
     </div>
-    <div class="ui vertical segment">
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-        
-    <script type="riot/tag" src="~/Scripts/riot/Home/riot-navbar.tag">
-    </script>
-    <script type="riot/tag" src="~/Scripts/riot/Home/riot-sidebar.tag">
-    </script>
-    <script type="riot/tag" src="~/Scripts/riot/Home/riot-aside.tag">
-    </script>
-    <script>riot.mount('*')</script>    
-        
-        
+           
+
+    <script type="riot/tag" src="~/Scripts/riot/Home/riot-navbar.tag"></script>
+    <script type="riot/tag" src="~/Scripts/riot/Home/riot-sidebar.tag"></script>
+    <script type="riot/tag" src="~/Scripts/riot/Home/riot-aside.tag"></script>
+                       
     @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/chartjs/chartjs-2.7.2.min.js"></script>
     @Scripts.Render("~/bundles/semantic")        
     @RenderSection("scripts", required: false)
+
+    <script>riot.mount('*')</script>     
 </body>
 </html>

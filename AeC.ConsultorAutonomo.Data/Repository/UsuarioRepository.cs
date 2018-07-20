@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Linq.Expressions;
 using AeC.ConsultorAutonomo.Data.Dapper;
 using System.Data;
-using Dapper;
+
 
 namespace AeC.ConsultorAutonomo.Data.Repository
 {
@@ -28,31 +28,32 @@ namespace AeC.ConsultorAutonomo.Data.Repository
 
         public void Add(Usuario entity)
         {
-            return _connection.ExecuteScalar<>(
-                    @"INSERT INTO Usuario(Nome, Nascimento, CriadoEm, AlteradoEm, ExcluidoEm)
-                        VALUES(@Nome, @Nascimento, @CriadoEm, @AlteradoEm, @ExcluidoEm);
-                        SELECT SCOPE_IDENTITY()",
-                    entity,
-                    _transaction);
+            //return _connection.ExecuteScalar<>(
+            //        @"INSERT INTO Usuario(Nome, Nascimento, CriadoEm, AlteradoEm, ExcluidoEm)
+            //            VALUES(@Nome, @Nascimento, @CriadoEm, @AlteradoEm, @ExcluidoEm);
+            //            SELECT SCOPE_IDENTITY()",
+            //        entity,
+            //        _transaction);
         }
 
         public Task AddAsync(Usuario entity)
         {
-            return _connection.ExecuteScalarAsync<Task>(
-                 @"INSERT INTO Usuario(Nome, Nascimento, CriadoEm, AlteradoEm, ExcluidoEm)
-                        VALUES(@Nome, @Nascimento, @CriadoEm, @AlteradoEm, @ExcluidoEm);
-                        SELECT SCOPE_IDENTITY()",
-                     entity)
-                     .Result;
-                    
+            throw new NotImplementedException();
+            //return _connection.ExecuteScalarAsync<Task>(
+            //     @"INSERT INTO Usuario(Nome, Nascimento, CriadoEm, AlteradoEm, ExcluidoEm)
+            //            VALUES(@Nome, @Nascimento, @CriadoEm, @AlteradoEm, @ExcluidoEm);
+            //            SELECT SCOPE_IDENTITY()",
+            //         entity)
+            //         .Result;
+
         }
 
         public void Remove(Usuario entity)
         {
-            _connection.Execute(
-                @"DELETE Usuario SET Id = @Id",
-                entity,
-                _transaction);
+            //_connection.Execute(
+            //    @"DELETE Usuario SET Id = @Id",
+            //    entity,
+            //    _transaction);
         }
 
         public Task RemoveAsync(Usuario entity)

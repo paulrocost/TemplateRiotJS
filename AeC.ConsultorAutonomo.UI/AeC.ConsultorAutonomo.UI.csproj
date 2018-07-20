@@ -198,7 +198,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndicadorController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RegraController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -211,6 +213,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\semanticui\semantic-riot.min.css" />
     <Content Include="Content\semanticui\themes\default\assets\fonts\brand-icons.svg" />
     <Content Include="Content\semanticui\themes\default\assets\fonts\icons.svg" />
     <Content Include="Content\semanticui\themes\default\assets\fonts\outline-icons.svg" />
@@ -237,6 +240,7 @@
     <Content Include="Content\semanticui\themes\default\assets\fonts\outline-icons.woff" />
     <Content Include="Content\semanticui\themes\default\assets\fonts\outline-icons.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\chartjs\chartjs-2.7.2.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -251,6 +255,7 @@
     <Content Include="Scripts\riot\riotpluscompile.js" />
     <Content Include="Content\semanticui\semantic.min.css" />
     <Content Include="Scripts\semanticui\semantic.min.js" />
+    <Content Include="Scripts\semanticui\semanticui-riot.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -286,14 +291,20 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Scripts\riot\Home\riot-navbar.tag" />
     <Content Include="Scripts\riot\Home\riot-sidebar.tag" />
     <Content Include="Scripts\riot\Home\riot-partiallogin.tag" />
     <Content Include="Scripts\riot\Home\riot-aside.tag" />
+    <Content Include="Views\Indicador\Index.cshtml" />
+    <Content Include="Views\Regra\Index.cshtml" />
+    <Content Include="Scripts\riot\Dashboard\riot-dashboard.tag" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Scripts\riot\Indicador\riot-indicador.tag" />
+    <Content Include="Scripts\riot\Regra\riot-regra.tag" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\riot\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

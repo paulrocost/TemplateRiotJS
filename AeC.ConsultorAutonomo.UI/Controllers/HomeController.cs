@@ -24,7 +24,7 @@ namespace AeC.ConsultorAutonomo.UI.Controllers
                     CriadoEm = DateTime.Now
                 });
 
-            return View();
+            return RedirectToAction("Index","Dashboard");
         }
 
         public ActionResult About()
