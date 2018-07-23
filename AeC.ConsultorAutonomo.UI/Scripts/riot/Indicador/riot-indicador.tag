@@ -1,33 +1,23 @@
 ﻿<riot-indicador>
-<form class="ui form">
+<form class="ui form" onsubmit={add_indicador}>
   <h4 class="ui dividing header">Cadastro Indicadores</h4>
   <div class="field">    
     <div class="three fields">
       <div class="four wide field">
 	      <label>Nome</label>
-        <input type="text" name="shipping[Nome indicador]" placeholder="First Name"/>
+        <input type="text" name="shipping[Nome indicador]" ref="firstname" placeholder="First Name"/>
       </div>  
 	    <div class=" four wide field">
         <label>Unidade do indicador</label>
-        <select class="ui fluid dropdown">
-		      <option value="">- Seleciona a unidade -</option>
-		      <option value="1">Número [int]</option>
-		      <option value="2">Texto [string]</option>
-		      <option value="3">Decimal [0,00]</option>
-		      <option value="4">Percentual [%]</option>
-        </select>
+        <su-dropdown items="{ unidadeItems }" ref="unidadeselected"></su-dropdown>       
       </div>
       <div class=" four wide field">
         <label>Tipo indicador</label>
-        <select class="ui fluid dropdown">
-          <option value="">- Tipo indicador -</option>
-          <option value="1">Querência</option>
-          <option value="2">Negócio</option>
-        </select>
+        <su-dropdown items="{ tipoItems }" ref="tiposelected"></su-dropdown>        
       </div>
       <div class="three wide field">
         <label> .</label>
-        <div class="ui button" tabindex="0">Salvar</div>
+        <button type="submit" class="ui button" tabindex="0" >Salvar</button>
       </div>
    </div>
   </div>     
@@ -42,37 +32,17 @@
         <th>Ações</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody each={indicadoresList}>
       <tr>
         <td>
-          <div class="ui ribbon label">Tempo Logado</div>
+          <div class="ui ribbon label">{indicador}</div>
         </td>
-        <td>Número</td>
-        <td>Querência</td>
+        <td>{unidade}</td>
+        <td>{tipo}</td>
         <td>
-          <div class="ui mini red button">Deletar</div>
+          <div class="ui mini red button" ref="index" onclick={delete}>Deletar</div>
         </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="ui ribbon label">Pausa</div>
-        </td>
-        <td>Número</td>
-        <td>Querência</td>
-        <td>
-          <div class="ui mini red button">Deletar</div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="ui ribbon label">Absenteísmo</div>
-        </td>
-        <td>Número</td>
-        <td>Querência</td>
-        <td>
-          <div class="ui mini red button">Deletar</div>
-        </td>
-      </tr>
+      </tr>      
     </tbody>
     <tfoot>
       <tr>
@@ -90,4 +60,58 @@
       </tr>
     </tfoot>
   </table>
+  <script>
+    this.unidadeItems =
+    [
+    {
+    label: '- Selecione a Unidade -',
+    value: null,
+    default: true
+    },
+    { value: 'Número [int]', label: 'Número [int]' },
+    { value: 'Texto [string]', label: 'Texto [string]' },
+    { value: 'Decimal [0,00]', label: 'Decimal [0,00]' },
+    { value: 'Percentual [%]', label: 'Percentual [%]' },
+    ]
+
+    this.tipoItems =
+    [
+    {
+    label: '- Selecione o Tipo -',
+    value: null,
+    default: true
+    },
+    { value: 'Querência', label: 'Querência' },
+    { value: 'Negócio', label: 'Negócio' },
+    ]
+
+    this.indicadoresList = [
+    {indicador:'Tempo Logado', unidade:'Número', tipo: 'Querência'},
+    {indicador:'Pausa', unidade:'Número', tipo: 'Querência'},
+    {indicador:'Absenteísmo', unidade:'Número', tipo: 'Querência'}
+    ]
+
+    this.on('mount', () => {
+    this.refs.unidadeselected.on('change', target => {
+    //this.indicadoresList.push(`Changed. label: ${target.label}, value: ${target.value}`)
+    });
+    this.refs.tiposelected.on('change', target => {
+    //this.indicadoresList.push(`Changed. label: ${target.label}, value: ${target.value}`)
+    });
+    });
+
+    this.add_indicador = function(e){
+    e.preventDefault();   
+    this.indicadoresList.push(
+    {
+    indicador: this.refs.firstname.value,
+    unidade: this.refs.unidadeselected.value,
+    tipo: this.refs.tiposelected.value
+    });
+    }
+    this.delete = function(e){      
+      this.indicadoresList.splice(e.item,1);
+    }
+
+  </script>
 </riot-indicador>

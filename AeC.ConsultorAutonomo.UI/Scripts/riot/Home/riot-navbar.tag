@@ -21,6 +21,9 @@
           <a href="/Indicador/Index" class="item">
             <i class="chart line icon"></i> Indicadores
           </a>
+          <a href="/Acao/Index" class="item">
+            <i class="bolt icon"></i> Ações
+          </a>
           <a href="/Regra/Index" class="item">
             <i class="globe icon"></i> Regras
           </a>
